@@ -24,8 +24,8 @@ getting(){
 	BL="\e[94m"
 	NC="\e[0m"
 	site=${1%$'\r'}
-	tnt=$(curl -A "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:65.0) Gecko/20100101 Firefox/65.0" -I -s -L "$site" | grep "Location" | sed 's/Location//g' | sed 's|[:,] ||g' | tail -1 || echo "$site" >&2 | sed '/^$/d')
-		echo "$tnt" >> nakanosec.txt
+	tnt=$(curl -A "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:65.0) Gecko/20100101 Firefox/65.0" -I -s -L "$site" | grep "Location" | sed 's/Location//g' | sed 's|[:,] ||g' | tail -1 || echo "$site" >&2)
+		echo "$tnt" | sed '/^$/d' >> nakanosec.txt
 		echo "$tnt"
 }
 export -f getting
