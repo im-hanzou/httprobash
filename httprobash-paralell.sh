@@ -1,5 +1,6 @@
 #!/bin/bash
 #Copyright by Nakanosec
+#how to use "httprobash-paralell.sh list.txt thread(number)"
 RD="\e[91m"
 GR="\e[92m"
 CY="\e[96m"
